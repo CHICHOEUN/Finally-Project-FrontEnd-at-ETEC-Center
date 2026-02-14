@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic And Technology</title>
+    <link rel="icon" href="./IMG/logo-taskbar.jpg">
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="bg-gray-100 min-h-screen flex items-start justify-center py-6 px-4 sm:px-6">
+      <div id="product-detail-container">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+          <div
+            class="bg-white rounded-3xl shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-10 p-8"
+          >
+            <div class="space-y-4">
+              <img
+                id="mainImage"
+                src="./IMG/c10HeadSets.jpg"
+                class="w-full h-[300px] sm:h-[450px] object-cover rounded-2xl border"
+                alt=""
+              />
+
+              <div class="flex gap-4 overflow-x-auto py-2">
+                <img
+                  src="./IMG/AirPods 3.jpg"
+                  class="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-xl cursor-pointer border hover:ring-2 ring-blue-500"
+                  alt=""
+                />
+                <img
+                  src="./IMG/c10HeadSets.jpg"
+                  class="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-xl cursor-pointer border hover:ring-2 ring-blue-500"
+                  alt=""
+                />
+                <img
+                  src="./IMG/AirPods 3.jpg"
+                  class="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-xl cursor-pointer border hover:ring-2 ring-blue-500"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <!-- Title -->
+              <div>
+                <h1 id="title" class="text-4xl font-bold text-gray-800">
+                  Premium Wireless Headphones
+                </h1>
+                <p class="text-gray-500 mt-1">Brand: SoundMax</p>
+              </div>
+
+              <!-- Price -->
+              <div class="flex items-center gap-4">
+                <span id="price" class="text-3xl font-bold text-blue-600"
+                  >$149.00</span
+                >
+                <span id="oldPrice" class="line-through text-gray-400"
+                  >$199.00</span
+                >
+                <span
+                  class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full"
+                >
+                  25% OFF
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2 text-yellow-400">
+                ★★★★☆
+                <span class="text-gray-500 text-sm">(68 Reviews)</span>
+              </div>
+
+              <!-- Description -->
+              <p id="" class="text-gray-700 leading-relaxed">
+                Enjoy crystal-clear sound with deep bass and advanced noise
+                cancellation. Designed for comfort and long listening sessions.
+              </p>
+
+              <!-- Features -->
+              <ul class="space-y-2 text-gray-700">
+                <li>✔ Active Noise Cancellation</li>
+                <li>✔ 30 Hours Battery Life</li>
+                <li>✔ Bluetooth 5.3</li>
+                <li>✔ Fast Charging Support</li>
+              </ul>
+
+              <!-- Color Option -->
+              <div>
+                <p class="font-semibold text-gray-800 mb-2">Color</p>
+                <div class="flex gap-3">
+                  <span
+                    class="w-8 h-8 bg-black rounded-full border-2 cursor-pointer"
+                  ></span>
+                  <span
+                    class="w-8 h-8 bg-gray-400 rounded-full border-2 cursor-pointer"
+                  ></span>
+                  <span
+                    class="w-8 h-8 bg-blue-600 rounded-full border-2 cursor-pointer"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- Quantity + Actions -->
+              <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                <div
+                  class="flex items-center border rounded-xl overflow-hidden"
+                >
+                  <button class="px-4 py-2 bg-gray-100">-</button>
+                  <input
+                    id="quantity"
+                    type="number"
+                    value="1"
+                    min="1"
+                    class="w-16 text-center outline-none border-l border-r"
+                  />
+                  <button class="px-4 py-2 bg-gray-100">+</button>
+                </div>
+
+                <button
+                  data-id="1"
+                  class="add-to-cart flex-1 bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="flex-1 bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between gap-4">
+              <a
+                href="products.html"
+                class="inline-flex items-center justify-center px-6 py-3 border rounded-xl text-gray-700 hover:bg-gray-100 transition"
+              >
+                ← Back
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./App/ProductDetail.js"></script>
+    <script type="module" src="./App/AddCartProduct.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="./App/Cart.js"></script> -->
+  </body>
+</html>

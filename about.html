@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic And Technology</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="icon" href="./IMG/logo-taskbar.jpg">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 w-full z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+      <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 text-2xl hover:text-blue-600 transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        <div class="text-3xl font-bold text-blue-600 hidden md:block">E&T Store</div>
+        <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+          <a href="./index.html" class="hover:text-blue-600 text-xl">Home</a>
+          <a href="./products.html" class="hover:text-blue-600 text-xl"
+            >Products</a
+          >
+          <a href="./about.html" class="hover:text-blue-600 text-xl">About</a>
+          <a href="./contact.html" class="hover:text-blue-600 text-xl">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+           <button id="cart-icon" class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full"
+              >
+              </span>
+            </button>
+          <a
+            href="./login.html"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            >Login</a
+          >
+        </div>
+      </div>
+       <!-- Mobile Menu Dropdown -->
+        <div
+          id="mobile-dropdown"
+          class="hidden md:hidden bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium"
+        >
+          <div class="text-3xl font-bold text-blue-600">
+            <h2>E&T Store</h2>
+          </div>
+
+          <a href="./index.html" class="block hover:text-blue-600">Home</a>
+          <a href="./products.html" class="block hover:text-blue-600"
+            >Products</a
+          >
+          <a href="./about.html" class="block hover:text-blue-600">About</a>
+          <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white pt-32"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold">About E&T Store</h1>
+        <p class="mt-4 text-lg text-gray-200">
+          Discover our story, mission, and the passionate team behind the best
+          electronic store in Cambodia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section
+      class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center"
+    >
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Mission</h2>
+        <p class="text-gray-600 mb-4">
+          At E&T Store, our mission is to provide premium electronic products
+          with modern design, advanced technology, and affordable prices. We
+          strive to make online shopping smooth, reliable, and enjoyable for all
+          our customers.
+        </p>
+        <p class="text-gray-600 mb-4">
+          Our dedicated team works tirelessly to source the latest gadgets and
+          deliver top-notch customer service, ensuring your satisfaction with
+          every purchase.
+        </p>
+      </div>
+      <div>
+        <img
+          src="./IMG/about-hero.jpg"
+          alt="About Us"
+          class="rounded-2xl w-full shadow-lg"
+        />
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12">Our Core Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <i class="fa-solid fa-star text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Quality Products</h3>
+            <p class="text-gray-500">
+              We provide only reliable, high-quality electronic devices.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <i class="fa-solid fa-truck-fast text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+            <p class="text-gray-500">
+              Quick shipping ensures you get your gadgets on time.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <i class="fa-solid fa-shield text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
+            <p class="text-gray-500">
+              Shop confidently with our safe and secure payment options.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+          Meet Our Team
+        </h2>
+        <p class="mt-3 text-gray-500">
+          Our passionate team ensures the best service and products.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Team Member Example -->
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition text-center"
+        >
+          <img
+            src="./IMG/DSC_1748.JPG"
+            alt="CHI CHOEUN"
+            class="rounded-full w-32 h-32 mx-auto mb-4 object-fit-cover"
+          />
+          <h3 class="text-lg font-semibold">CHI CHOEUN</h3>
+          <p class="text-gray-500 text-sm">Founder & CEO</p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition text-center"
+        >
+          <img
+            src="https://i.pinimg.com/1200x/a4/ad/e3/a4ade34601af89c976de99b6c1cb42a5.jpg"
+            alt="SOK DARA"
+            class="rounded-full w-32 h-32 mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-lg font-semibold">SOK DARA</h3>
+          <p class="text-gray-500 text-sm">Marketing Manager</p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition text-center"
+        >
+          <img
+            src="https://i.pinimg.com/736x/ae/e6/d4/aee6d45245609592339c8508ae27182d.jpg"
+            alt="SON SAN"
+            class="rounded-full w-32 h-32 mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-lg font-semibold">SOK SAN</h3>
+          <p class="text-gray-500 text-sm">Operations Lead</p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition text-center"
+        >
+          <img
+            src="https://i.pinimg.com/736x/52/8a/30/528a304e86857013664c5db8026ad76b.jpg"
+            alt="DOM KAKADA"
+            class="rounded-full w-32 h-32 mx-auto mb-4 object-cover"
+          />
+          <h3 class="text-lg font-semibold">SOK SABAY</h3>
+          <p class="text-gray-500 text-sm">Customer Support</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-4">
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">E&T Store</h3>
+            <p class="text-sm mb-4">
+              Your trusted online store for quality electronic products.
+            </p>
+            <p class="text-sm">📍 Phnom Penh, Cambodia</p>
+            <p class="text-sm">📞 +855 12 345 678</p>
+            <p class="text-sm">✉️ info@e&tStore.com</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="./index.html" class="hover:text-white">Home</a></li>
+              <li>
+                <a href="./products.html" class="hover:text-white">Products</a>
+              </li>
+              <li><a href="./about.html" class="hover:text-white">About</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">
+              Customer Service
+            </h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Returns</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+          © 2026 E&T Store. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+
+    menuBtn.addEventListener("click", () => {
+      mobileDropdown.classList.toggle("hidden");
+    });
+  </script>
+  <script type="module" src="./App/Product.js"></script>
+  <!-- <script type="module" src="./App/AddToCart.js"></script> -->
+  <script type="module" src="./App/AddCartProduct.js"></script>
+</html>

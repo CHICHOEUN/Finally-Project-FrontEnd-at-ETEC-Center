@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic And Technology</title>
+    <link rel="icon" href="./IMG/logo-taskbar.jpg">
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gray-100">
+      <div class="bg-white shadow-md fixed top-0 w-full z-100">
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+        >
+        <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 text-2xl hover:text-blue-600 transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <!-- logo -->
+          <div class="text-3xl font-bold text-blue-600 hidden md:block">
+            <h2>E&T Store</h2>
+          </div>
+          <!-- navigation -->
+          <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <a href="./index.html" class="hover:text-blue-600 text-xl">Home</a>
+            <a href="./products.html" class="hover:text-blue-600 text-xl">Products</a>
+            <a href="./about.html" class="hover:text-blue-600 text-xl">About</a>
+            <a href="./contact.html" class="hover:text-blue-600 text-xl">Contact</a>
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <div class="hidden md:block">
+              <input id="searchInput"
+                type="text"
+                placeholder="Search..."
+                class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <button id="cart-icon" class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full"
+              >
+                0
+              </span>
+            </button>
+            <div class="">
+              <a
+                href="./login.html"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                >Login</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div
+          id="mobile-dropdown"
+          class="hidden md:hidden bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium"
+        >
+          <div class="text-3xl font-bold text-blue-600">
+            <h2>E&T Store</h2>
+          </div>
+
+          <a href="./index.html" class="block hover:text-blue-600">Home</a>
+          <a href="./products.html" class="block hover:text-blue-600"
+            >Products</a
+          >
+          <a href="./about.html" class="block hover:text-blue-600">About</a>
+          <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
+        </div>
+      </div>
+
+      <section id="all-section" class="  bg-white shadow-sm py-24">
+        <div class="max-w-7xl mx-auto px-6 category-section">
+          <div
+            class="flex justify-between md:flex-row md:items-center md:justify-between"
+          >
+            <div>
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
+                All Products
+              </h1>
+            </div>
+
+            <div class="flex-wrap flex gap-5">
+              <select
+                id="productFilter"
+                class="px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="allProduct">All Categories</option>
+                <option value="phone">Phone</option>
+                <option value="laptop">Laptop</option>
+                <option value="accessories">Accessories</option>
+                <option value="camera">Camera</option>
+              </select>
+
+              <select
+                id="sortSelect"
+                class="px-4 py-2 border rounded-lg text-gray-700 focus:outline-none"
+              >
+                <option value="">Sort by</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="new">Newest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <section class="max-w-7xl mx-auto px-6 py-16">
+          <div
+            id="product-list-page"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Product Card -->
+            <!-- <div data-id="1"
+              class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+            >
+              <img
+                src="./IMG/AirPods 3.jpg"
+                alt=""
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800">
+                  IPhone 13Pro
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400"
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </span>
+                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+                </div>
+
+                <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
+                <button
+                  data-id="1"
+                  class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section id="phone-section" class="max-w-7xl mx-auto px-6 py-20">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10">
+              Phone
+            </h1>
+          </div>
+
+          <div
+            id="product-list-phone"
+            class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Product Card -->
+            <!-- <div data-id="1"
+              class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+            >
+              <img
+                src="./IMG/Ambrane Dual Fan Laptop New.jpg"
+                alt=""
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800">
+                  IPhone 13Pro
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400"
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </span>
+                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+                </div>
+
+                <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
+                <button
+                  data-id="1"
+                  class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section id="laptop-section" class="max-w-7xl mx-auto px-6 py-20">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 p-5 mb-10">
+              Laptop
+            </h1>
+          </div>
+
+          <div
+            id="product-list-laptop"
+            class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Product Card -->
+            <!-- <div data-id="1"
+              class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+            >
+              <img
+                src="./IMG/AsusRog.jpg"
+                alt=""
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800">
+                  IPhone 13Pro
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400"
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </span>
+                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+                </div>
+
+                <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
+                <button
+                  data-id="1"
+                  class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section id="accessory-section" class="max-w-7xl mx-auto px-6 py-20">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 p-5 mb-10">
+              Accessories
+            </h1>
+          </div>
+
+          <div
+            id="product-list-accessory"
+            class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Product Card -->
+            <!-- <div data-id="1"
+              class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+            >
+              <img
+                src="./IMG/AirPods 3.jpg"
+                alt=""
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800">
+                  AirPods 3
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400"
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </span>
+                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+                </div>
+
+                <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
+                <button
+                  data-id="1"
+                  class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section id="camera-section" class="max-w-7xl mx-auto px-6 py-20">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 p-5 mb-10">
+              Camera
+            </h1>
+          </div>
+
+          <div
+            id="product-list-camera"
+            class="category-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Product Card -->
+            <!-- <div data-id="1"
+              class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+            >
+              <img
+                src="./IMG/AsusRog.jpg"
+                alt=""
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-gray-800">
+                  IPhone 13Pro
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-yellow-400"
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </span>
+                  <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+                </div>
+
+                <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
+                <button
+                  data-id="1"
+                  class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </section>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-gray-300 mt-4">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">E&T Store</h3>
+              <p class="text-sm mb-4">
+                Your trusted online store for quality electronic products.
+              </p>
+              <p class="text-sm">📍 Phnom Penh, Cambodia</p>
+              <p class="text-sm">📞 +855 12 345 678</p>
+              <p class="text-sm">✉️ info@e&tStore.com</p>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-white">Home</a></li>
+                <li><a href="#" class="hover:text-white">Products</a></li>
+                <li><a href="#" class="hover:text-white">About</a></li>
+                <li><a href="#" class="hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">
+                Customer Service
+              </h4>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-white">Help Center</a></li>
+                <li><a href="#" class="hover:text-white">Returns</a></li>
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li>
+                  <a href="#" class="hover:text-white">Terms & Conditions</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-telegram"></i
+                ></a>
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+            © 2026 MyShop. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./App/Product.js"></script>
+    <script type="module" src="./App/AddCartProduct.js"></script>
+    <script type="module" src="./App/ProductDetail.js"></script>
+    <script src="./App/clickProduct.js"></script>
+  </body>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+
+    menuBtn.addEventListener("click", () => {
+      mobileDropdown.classList.toggle("hidden");
+    });
+  </script>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic And Technology</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="icon" href="./IMG/logo-taskbar.jpg">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <div class="bg-white shadow-md fixed top-0 w-full z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+      <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 text-2xl hover:text-blue-600 transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        <h2 class="text-3xl font-bold text-blue-600 hidden md:block">E&T Store</h2>
+
+        <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+          <a href="./index.html" class="hover:text-blue-600 text-xl">Home</a>
+          <a href="./products.html" class="hover:text-blue-600 text-xl"
+            >Products</a
+          >
+          <a href="./about.html" class="hover:text-blue-600 text-xl">About</a>
+          <a href="./contact.html" class="text-xl font-semibold"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button id="cart-icon" class="relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span
+                id="cart-count"
+                class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full"
+              >
+              </span>
+            </button>
+          <a
+            href="./login.html"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            >Login</a
+          >
+        </div>
+      </div>
+      <!-- Mobile Menu Dropdown -->
+        <div
+          id="mobile-dropdown"
+          class="hidden md:hidden bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium"
+        >
+          <div class="text-3xl font-bold text-blue-600">
+            <h2>E&T Store</h2>
+          </div>
+
+          <a href="./index.html" class="block hover:text-blue-600">Home</a>
+          <a href="./products.html" class="block hover:text-blue-600"
+            >Products</a
+          >
+          <a href="./about.html" class="block hover:text-blue-600">About</a>
+          <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="pt-32 pb-20 max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold text-gray-800">Contact Us</h2>
+        <p class="mt-3 text-gray-500">
+          Have questions? We'd love to hear from you.
+        </p>
+      </div>
+
+      <div
+        class="grid md:grid-cols-2 gap-4 bg-white p-6 rounded-3xl shadow-lg"
+      >
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+            Get In Touch
+          </h3>
+
+          <div class="space-y-5 text-gray-600">
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-location-dot text-xl"></i>
+              <p>Phnom Penh, Cambodia</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-phone text-xl"></i>
+              <p>+855 12 345 678</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-envelope text-xl"></i>
+              <p>info@etstore.com</p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
+            <div class="flex space-x-4 text-xl">
+              <a href="#" class="text-blue-600 hover:text-blue-800">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="text-blue-400 hover:text-blue-600">
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+              <a href="#" class="text-gray-700 hover:text-black">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="space-y-1">
+          <div>
+            <label class="block text-gray-700 font-medium mb-2"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Message</label>
+            <textarea
+              rows="5"
+              placeholder="Message..."
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-4">
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">E&T Store</h3>
+            <p class="text-sm mb-4">
+              Your trusted online store for quality electronic products.
+            </p>
+            <p class="text-sm">📍 Phnom Penh, Cambodia</p>
+            <p class="text-sm">📞 +855 12 345 678</p>
+            <p class="text-sm">✉️ info@e&tStore.com</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="./index.html" class="hover:text-white">Home</a></li>
+              <li>
+                <a href="./products.html" class="hover:text-white">Products</a>
+              </li>
+              <li><a href="./about.html" class="hover:text-white">About</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">
+              Customer Service
+            </h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Returns</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+          © 2026 E&T Store. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+
+    menuBtn.addEventListener("click", () => {
+      mobileDropdown.classList.toggle("hidden");
+    });
+  </script>
+  <script type="module" src="./App/Product.js"></script>
+  <!-- <script type="module" src="./App/AddToCart.js"></script> -->
+  <script type="module" src="./App/AddCartProduct.js"></script>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronic And Technology</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="bg-gray-100">
+      <!--Title -->
+      <section class="max-w-7xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Shopping Cart</h1>
+
+        <!-- Cart Table -->
+        <div class="bg-white rounded-xl shadow overflow-x-auto">
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left min-w-[600px]">
+              <thead class="bg-gray-100 text-gray-600 text-sm">
+                <tr>
+                  <th class="p-2 sm:p-4 text-sm sm:text-base">Product</th>
+                  <th class="p-2 sm:p-4 text-sm sm:text-base">Price</th>
+                  <th class="p-2 sm:p-4 text-sm sm:text-base">Quantity</th>
+                  <th class="p-2 sm:p-4 text-sm sm:text-base">Subtotal</th>
+                  
+                  <th class="p-2 sm:p-4 text-sm sm:text-base">Action</th>
+                </tr>
+              </thead>
+              
+              <tbody id="cart-items">
+                <!-- <tr class="border-b">
+                  <td class="p-4 flex items-center gap-4">
+                    <img
+                    src="./IMG/c1phone.jpg"
+                    class="w-20 h-20 rounded-lg object-cover"
+                    alt="Product"
+                    />
+                    <span class="font-medium">Wireless Headphone</span>
+                  </td>
+                  <td class="p-4 font-semibold text-blue-600">$59.00</td>
+                  <td class="p-4">
+                    <div class="flex items-center border rounded-lg w-fit">
+                      <button class="px-3 py-1 hover:bg-gray-100">−</button>
+                      <span class="px-4">1</span>
+                      <button class="px-3 py-1 hover:bg-gray-100">+</button>
+                    </div>
+                  </td>
+                  
+                  <td class="p-4">
+                    <div class="flex gap-3">
+                      <button
+                      class="px-3 py-1 text-sm border rounded-lg text-red-500 hover:bg-red-50"
+                      >
+                      Remove
+                    </button>
+                  </div>
+                </td>
+              </tr> -->
+              
+              <!-- Copy tr for more items -->
+            </tbody>
+          </table>
+        </div>
+          
+          <!-- Cart Summary -->
+          <div
+            class="bg-white mt-6 p-6 rounded-xl shadow flex flex-col sm:flex-row justify-between items-center gap-4"
+          >
+            <div class="text-lg font-semibold">
+              Total: $<span id="total-price">0</span>
+            </div>
+
+            <div class="flex gap-3">
+              <button
+                id="clear-cart"
+                class="px-5 py-2 bg-gray-500 text-white rounded-lg"
+              >
+                Clear Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 pb-12">
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+          <a
+            href="products.html"
+            class="inline-flex items-center justify-center px-6 py-3 border rounded-xl text-gray-700 hover:bg-gray-100 transition"
+          >
+            ← Back
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-gray-300 mt-4">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4">E&T Store</h3>
+              <p class="text-sm mb-4">
+                Your trusted online store for quality electronic products.
+              </p>
+              <p class="text-sm">📍 Phnom Penh, Cambodia</p>
+              <p class="text-sm">📞 +855 12 345 678</p>
+              <p class="text-sm">✉️ info@e&tStore.com</p>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-white">Home</a></li>
+                <li><a href="#" class="hover:text-white">Products</a></li>
+                <li><a href="#" class="hover:text-white">About</a></li>
+                <li><a href="#" class="hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">
+                Customer Service
+              </h4>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-white">Help Center</a></li>
+                <li><a href="#" class="hover:text-white">Returns</a></li>
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li>
+                  <a href="#" class="hover:text-white">Terms & Conditions</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-telegram"></i
+                ></a>
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="#" class="hover:text-white text-xl"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+            © 2026 E&T Store. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  </html>
+  <script type="module"  src="./App/Cart.js"></script>
+

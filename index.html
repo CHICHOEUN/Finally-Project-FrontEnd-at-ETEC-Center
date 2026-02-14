@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electronic And Technology</title>
+    <link rel="icon" href="./IMG/logo-taskbar.jpg">
     <link href="./src/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -20,27 +21,43 @@
         <div
           class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
         >
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 text-2xl hover:text-blue-600 transition"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
           <!-- logo -->
-          <div class="text-3xl font-bold text-blue-600">
+          <div class="text-3xl font-bold text-blue-600 hidden md:block">
             <h2>E&T Store</h2>
           </div>
           <!-- navigation -->
-          <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
-            <a href="#" class="hover:text-blue-600 text-xl">Home</a>
-            <a href="#" class="hover:text-blue-600 text-xl">Products</a>
-            <a href="#" class="hover:text-blue-600 text-xl">About</a>
-            <a href="#" class="hover:text-blue-600 text-xl">Contact</a>
+          <nav
+            id="mobile-menu"
+            class="hidden md:flex space-x-8 text-gray-700 font-medium"
+          >
+            <a href="./index.html" class="hover:text-blue-600 text-xl">Home</a>
+            <a href="./products.html" class="hover:text-blue-600 text-xl"
+              >Products</a
+            >
+            <a href="./about.html" class="hover:text-blue-600 text-xl">About</a>
+            <a href="./contact.html" class="hover:text-blue-600 text-xl"
+              >Contact</a
+            >
           </nav>
 
           <div class="flex items-center space-x-4">
+            <!-- Mobile Menu Button -->
+
             <div class="hidden md:block">
               <input
+                id="searchInput"
                 type="text"
                 placeholder="Search..."
                 class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
-            <button class="relative">
+            <button id="cart-icon" class="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -60,21 +77,38 @@
                 />
               </svg>
               <span
+                id="cart-count"
                 class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full"
               >
-                3
               </span>
             </button>
             <div class="">
               <a
-                href="#"
+                href="./login.html"
                 class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                 >Login</a
               >
             </div>
           </div>
         </div>
+        <!-- Mobile Menu Dropdown -->
+        <div
+          id="mobile-dropdown"
+          class="hidden md:hidden bg-white shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium"
+        >
+          <div class="text-3xl font-bold text-blue-600">
+            <h2>E&T Store</h2>
+          </div>
+
+          <a href="./index.html" class="block hover:text-blue-600">Home</a>
+          <a href="./products.html" class="block hover:text-blue-600"
+            >Products</a
+          >
+          <a href="./about.html" class="block hover:text-blue-600">About</a>
+          <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
+        </div>
       </div>
+
       <!-- hero-section  -->
       <section
         class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
@@ -95,12 +129,12 @@
 
             <div class="mt-8 flex space-x-4">
               <a
-                href="#"
+                href="./products.html"
                 class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
                 >Shop Now</a
               >
               <a
-                href="#"
+                href="./products.html"
                 class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
                 >View Products</a
               >
@@ -131,7 +165,7 @@
               class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden group"
             >
               <img
-                src="./IMG/c1phone.jpg"
+                src="./IMG/samsung s22 ultra.jpg"
                 alt="Phone"
                 class="h-80 w-full object-cover group-hover:scale-105 transition"
               />
@@ -311,7 +345,7 @@
         </div>
       </section>
       <!-- Product Section -->
-      <section class="max-w-7xl mx-auto px-6 py-15">
+      <section class="max-w-7xl mx-auto px-6">
         <!-- title  -->
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
@@ -320,13 +354,16 @@
           <p class="mt-3 text-gray-500">Best electronic products for you</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div
+          id="product-list"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        >
           <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+          <!-- <div
+            class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
           >
             <img
-              src="./IMG/c1phone.jpg"
+              src="./IMG/Samsung s25 ultra.jpg"
               alt=""
               class="h-60 w-full object-cover"
             />
@@ -345,344 +382,13 @@
 
               <p class="mt-3 text-xl font-bold text-blue-600">$699</p>
               <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                data-id="${product.id}"
+                class="add-to-cart mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
               >
                 Add to Cart
               </button>
             </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c2smartWatches.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Smart Watches</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.9)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$129</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c3PowerBank.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Power Bank</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$100</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c4Laptop.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Lenovo</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.9)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$729</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c5Mouse.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Mouse</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$50</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c6Speaker.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Speaker</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$200</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c7Webcam.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Web Cam</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$329</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c8HeadPhone.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Head Phone</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$140</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c9Flash.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Flash</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$15</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c10HeadSets.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Head Sets</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$99</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c11Controller.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">Controller</h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$50</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-          <!-- Product Card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-          >
-            <img
-              src="./IMG/c12Keyboard.jpg"
-              alt=""
-              class="h-60 w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">
-                Keyboard Gaming
-              </h3>
-              <div class="flex items-center mt-2">
-                <span class="text-yellow-400"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-              </div>
-
-              <p class="mt-3 text-xl font-bold text-blue-600">$25</p>
-              <button
-                class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <!-- Promotion Section -->
@@ -698,20 +404,20 @@
               <span
                 class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm mb-4"
               >
-                🔥 Limited Time Offer
+                <i class="fa-solid fa-fire text-2xl"> </i>Limited Time Offer
               </span>
               <h2 class="text-3xl md:text-5xl font-bold">
                 Up To <span class="text-yellow-300">50% OFF</span>
               </h2>
               <p class="mt-4 text-lg text-white/90 max-w-lg">
-                Don’t miss our biggest sale on electronic products. Grab your
+                Don't miss our biggest sale on electronic products. Grab your
                 favorite gadgets at unbeatable prices today!
               </p>
             </div>
 
             <div>
               <a
-                href="#"
+                href="./products.html"
                 class="bg-white text-red-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition"
                 >Shop Now</a
               >
@@ -726,7 +432,7 @@
         </div>
       </section>
       <!-- New Product Section  -->
-      <section class="max-w-7xl mx-auto px-6 py-20">
+      <section class="max-w-7xl mx-auto px-6">
         <!-- title -->
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
@@ -737,12 +443,15 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div
+          id="product-list-new"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        >
           <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
+          <!-- <div
+            class="product-card bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
           >
-            <span class="absolute top-30">
+            <span class="absolute top-1">
               <img
                 src="./IMG/logo new.png"
                 alt=""
@@ -750,269 +459,336 @@
               />
             </span>
             <img
-              src="./IMG/c1phone.jpg"
+              src="./IMG/Samsung s25 ultra.jpg"
               alt=""
               class="h-60 w-full object-cover transition"
             />
             <div class="p-5">
               <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
+              <div class="flex items-center mt-2">
+                <span class="text-yellow-400"
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </span>
+                <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+              </div>
               <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
 
               <div class="mt-4 flex gap-8">
                 <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
+                  class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
                 >
                   Add to Cart
                 </button>
                 <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
+                  class="add-to-cart flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
                 >
                   Quick View
                 </button>
               </div>
             </div>
+          </div> -->
+          <!-- Product card -->
+        </div>
+      </section>
+      <!-- Why Choose Us Section  -->
+      <section class="max-w-7xl mx-auto px-6 py-20">
+        <!-- titte  -->
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+            Why Choose Us
+          </h2>
+          <p class="mt-3 text-gray-500">
+            We provide the best service and quality for our customers
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center"
+          >
+            <div class="flex justify-center py-2 mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-check-big-icon lucide-circle-check-big"
+              >
+                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                <path d="m9 11 3 3L22 4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800">Quality Product</h3>
+            <p class="mt-3 text-gray-500">
+              High-quality and reliable electronic products guaranteed.
+            </p>
           </div>
-          <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
-          >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
 
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center"
+          >
+            <div class="flex justify-center py-2 mb-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-truck-icon lucide-truck"
+              >
+                <path
+                  d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                />
+                <path d="M15 18H9" />
+                <path
+                  d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
             </div>
+            <h3 class="text-xl font-semibold text-gray-800">Fast Delivery</h3>
+            <p class="mt-3 text-gray-500">
+              Quick and safe delivery to your doorstep.
+            </p>
           </div>
-          <!-- Product card -->
           <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center"
           >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
-
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+            <div class="flex justify-center mb-2 py-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-id-card-icon lucide-id-card"
+              >
+                <path d="M16 10h2" />
+                <path d="M16 14h2" />
+                <path d="M6.17 15a3 3 0 0 1 5.66 0" />
+                <circle cx="9" cy="11" r="2" />
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+              </svg>
             </div>
+            <h3 class="text-xl font-semibold text-gray-800">Secure Payment</h3>
+            <p class="mt-3 text-gray-500">
+              Safe and secure payment methods for your peace of mind.
+            </p>
           </div>
-          <!-- Product card -->
           <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center"
           >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
-
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+            <div class="flex justify-center mb-2 py-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-message-square-heart-icon lucide-message-square-heart"
+              >
+                <path
+                  d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"
+                />
+                <path
+                  d="M7.5 9.5c0 .687.265 1.383.697 1.844l3.009 3.264a1.14 1.14 0 0 0 .407.314 1 1 0 0 0 .783-.004 1.14 1.14 0 0 0 .398-.31l3.008-3.264A2.77 2.77 0 0 0 16.5 9.5 2.5 2.5 0 0 0 12 8a2.5 2.5 0 0 0-4.5 1.5"
+                />
+              </svg>
             </div>
+            <h3 class="text-xl font-semibold text-gray-800">
+              Customer Support
+            </h3>
+            <p class="mt-3 text-gray-500">
+              Friendly support available 24/7 for any assistance.
+            </p>
           </div>
-          <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
-          >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
+        </div>
+      </section>
+      <!-- Customer Review  -->
+      <section class="max-w-7xl mx-auto px-6">
+        <!-- title -->
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+            What Our Customers Say
+          </h2>
+          <p class="mt-3 text-gray-500">
+            Real feedback from our happy customers
+          </p>
+        </div>
 
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+        <div class="grid grid-cols-1 mt-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <div class="flex text-yellow-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
+            <p class="text-gray-600 mb-6">
+              The products are amazing and the delivery was super fast. I'm very
+              satisfied with the quality!
+            </p>
+            <h4 class="font-semibold text-gray-800">CHI CHOEUN</h4>
           </div>
-          <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
-          >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
 
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+          <div
+            class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <div class="flex text-yellow-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
             </div>
+
+            <p class="text-gray-600 mb-6">
+              Great service and secure payment. Customer support helped me
+              quickly. Highly recommended!
+            </p>
+
+            <h4 class="font-semibold text-gray-800">SOK DARA</h4>
           </div>
-          <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
-          >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
 
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+          <div
+            class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <div class="flex text-yellow-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
+
+            <p class="text-gray-600 mb-6">
+              Best electronics shop online. Prices are fair and products are
+              original.
+            </p>
+
+            <h4 class="font-semibold text-gray-800">SON SAN</h4>
           </div>
-          <!-- Product card -->
-          <div
-            class="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden relative"
-          >
-            <span class="absolute top-30">
-              <img
-                src="./IMG/logo new.png"
-                alt=""
-                style="width: 20%; height: auto"
-              />
-            </span>
-            <img
-              src="./IMG/c1phone.jpg"
-              alt=""
-              class="h-60 w-full object-cover transition"
-            />
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-gray-800">IPhone 13Pro</h3>
-              <p class="mt-2 text-blue-600 font-bold text-xl">$699</p>
 
-              <div class="mt-4 flex gap-8">
-                <button
-                  class="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  class="flex-1 border border-gray-600 text-gray-700 px-3 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Quick View
-                </button>
-              </div>
+          <div
+            class="bg-white p-10 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <div class="flex text-yellow-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
+
+            <p class="text-gray-600 mb-6">
+              Excellent prices and 100% original products. Truly the best online
+              electronics store I've used.
+            </p>
+
+            <h4 class="font-semibold text-gray-800">SOK SABAY</h4>
           </div>
         </div>
       </section>
     </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-4">
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">E&T Store</h3>
+            <p class="text-sm mb-4">
+              Your trusted online store for quality electronic products.
+            </p>
+            <p class="text-sm">📍 Phnom Penh, Cambodia</p>
+            <p class="text-sm">📞 +855 12 345 678</p>
+            <p class="text-sm">✉️ info@e&tStore.com</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-white">Home</a></li>
+              <li><a href="#" class="hover:text-white">Products</a></li>
+              <li><a href="#" class="hover:text-white">About</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">
+              Customer Service
+            </h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Returns</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="hover:text-white text-xl"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+          © 2026 MyShop. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </body>
+  <script type="module" src="./App/Product.js"></script>
+  <!-- <script type="module" src="./App/AddToCart.js"></script> -->
+  <script type="module" src="./App/AddCartProduct.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+
+    menuBtn.addEventListener("click", () => {
+      mobileDropdown.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- <script  src="./App/Data.js"></script> -->
 </html>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
